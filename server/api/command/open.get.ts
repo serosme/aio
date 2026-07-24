@@ -10,7 +10,7 @@ export default defineEventHandler((event) => {
 
   const script = getCommandScript(name)
   if (!script) {
-    throw createError({ statusCode: 400, message: `Unknown command: ${name}` })
+    throw createError({ message: `Unknown command: ${name}` })
   }
 
   const child = spawn('wt.exe', ['powershell', '-NoExit', '-EncodedCommand', toEncodedCommand(script)], {

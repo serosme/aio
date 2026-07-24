@@ -5,7 +5,7 @@ export default defineEventHandler((event) => {
 
   const folderPath = getFolderPath(name)
   if (!folderPath) {
-    throw createError({ statusCode: 404, message: `Folder not found: ${name}` })
+    throw createError({ message: `Folder not found: ${name}` })
   }
 
   const child = spawn('explorer.exe', [folderPath], {

@@ -5,7 +5,7 @@ export default defineEventHandler((event) => {
 
   const id = getAppId(name)
   if (!id) {
-    throw createError({ statusCode: 404, message: `App not found: ${name}` })
+    throw createError({ message: `App not found: ${name}` })
   }
 
   const child = spawn('explorer.exe', [`shell:AppsFolder\\${id}`], {
