@@ -1,0 +1,48 @@
+{
+  "name": "aio",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "main": "electron/main.ts",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "ncu": "npx --yes npm-check-updates --target patch",
+    "ncuu": "npx --yes npm-check-updates --target patch --upgrade",
+    "dev": "concurrently -n \"nuxt,electron\" -k \"nuxt dev\" \"wait-on http://localhost:2999 && cross-env NODE_ENV=dev electron .\"",
+    "preview": "nuxt build && electron .",
+    "build": "nuxt build && electron-builder",
+    "release": "node release.ts"
+  },
+  "dependencies": {
+    "@audio/decode": "3.11.2",
+    "@audio/encode": "1.6.1",
+    "@nuxt/ui": "4.10.0",
+    "conf": "15.1.0",
+    "nuxt": "4.4.8",
+    "pinyin-pro": "3.28.2",
+    "tailwindcss": "4.3.3",
+    "uiohook-napi": "1.5.5",
+    "vue": "3.5.40",
+    "vue-router": "5.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "9.2.0",
+    "@iconify-json/lucide": "1.2.118",
+    "concurrently": "10.0.3",
+    "cross-env": "10.1.0",
+    "electron": "43.2.0",
+    "electron-builder": "26.15.7",
+    "eslint": "10.7.0",
+    "eslint-plugin-format": "2.0.1",
+    "wait-on": "9.1.0"
+  },
+  "allowScripts": {
+    "vue-demi@0.14.10": true,
+    "@parcel/watcher@2.5.6": true,
+    "electron-winstaller@5.4.0": true,
+    "esbuild@0.28.1": true,
+    "esbuild@0.27.7": true,
+    "uiohook-napi@1.5.5": true
+  }
+}
