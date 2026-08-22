@@ -1,0 +1,15 @@
+npmRebuild: false
+appId: aio
+productName: Aio
+artifactName: '${productName}-${os}-${arch}.${ext}'
+# asar: false
+directories:
+  output: release
+electronLanguages:
+  - zh-CN
+files:
+  - '.output/**/*'
+  - 'electron/**/*'
+  - 'public/**/*'
+win:
+  target: zip
