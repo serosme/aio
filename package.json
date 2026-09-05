@@ -1,0 +1,54 @@
+{
+  "name": "aio",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "main": "electron/main.ts",
+  "scripts": {
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "ncu": "npx --yes npm-check-updates",
+    "dev": "cross-env NODE_ENV=dev concurrently -n \"nuxt,electron\" -k \"nuxt dev\" \"wait-on http://localhost:2999 && electron .\"",
+    "preview": "nuxt build && electron .",
+    "build": "nuxt build && electron-builder",
+    "release": "nuxt build && electron-builder && node release.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "3.0.44",
+    "@ai-sdk/vue": "4.0.93",
+    "@iconify-json/lucide": "1.2.129",
+    "@nuxt/ui": "4.11.0",
+    "@nuxtjs/mdc": "0.23.1",
+    "@vueuse/core": "14.4.0",
+    "ai": "7.0.93",
+    "conf": "15.1.0",
+    "decibri": "5.7.0",
+    "js-yaml": "5.4.1",
+    "nuxt": "4.5.2",
+    "pinyin-pro": "3.29.3",
+    "taglib-wasm": "2.2.2",
+    "tailwindcss": "4.3.3",
+    "uiohook-napi": "1.5.5",
+    "vue": "3.5.42",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "9.5.1",
+    "concurrently": "10.0.5",
+    "cross-env": "10.1.0",
+    "electron": "44.2.0",
+    "electron-builder": "26.15.7",
+    "eslint": "10.10.0",
+    "eslint-plugin-format": "2.0.1",
+    "vue-tsc": "3.3.11",
+    "wait-on": "9.1.0"
+  },
+  "allowScripts": {
+    "vue-demi@0.14.10": true,
+    "electron-winstaller@5.4.0": true,
+    "esbuild@0.27.7": true,
+    "esbuild@0.28.2": true,
+    "uiohook-napi@1.5.5": true
+  }
+}
