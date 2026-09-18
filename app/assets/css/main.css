@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+:focus-visible,
+:focus-visible::before,
+:focus-visible::after {
+  outline: none;
+}

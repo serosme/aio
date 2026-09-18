@@ -1,0 +1,16 @@
+{
+  "homepage": "https://github.com/serosme/aio",
+  "version": "20260918235546",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/serosme/aio/releases/latest/download/Aio-win-x64.zip",
+      "hash": "00b8739cf8de2cd6566d1609b027a17266a87d55a11b3c7da44ac87b6c279b0f"
+    }
+  },
+  "shortcuts": [
+    [
+      "Aio.exe",
+      "Aio"
+    ]
+  ]
+}
